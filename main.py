@@ -28,7 +28,7 @@ def main():
             if ok:
                 print("Password changed.")
             else:
-                print("Website not found!")
+                print("Website not found! Operation failed.")
 
         elif option == "2":
             print("Enter the website, username, and password:")
