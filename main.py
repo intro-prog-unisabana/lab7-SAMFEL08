@@ -3,14 +3,16 @@ from password_manager import add_login, change_password, encrypt_passwords_in_fi
 
 def main() -> None:
     """TODO: Parte 5 - programa principal interactivo."""
-    from password_manager import change_password, add_login
+import sys
+from password_manager import change_password, add_login, encrypt_passwords_in_file
 
 def main():
     filename = input("Enter the CSV file name:\n")
+    encrypt_passwords_in_file(filename)
 
     while True:
         print("Options: (1) Change Password, (2) Add Password, (3) Quit:")
-        option = input()
+        option = input().strip()
 
         if option == "1":
             print("Enter the website and the new password:")
@@ -42,7 +44,7 @@ def main():
             print("Login added.")
 
         elif option == "3":
-            break
+            sys.exit(0)
 
         else:
             print("Invalid option selected!")
@@ -50,7 +52,3 @@ def main():
 if __name__ == "__main__":
     main()
 
-
-
-if __name__ == "__main__":
-    main()
